@@ -40,7 +40,7 @@ public class CurrencyConverterController {
 		CurrenyConversionBean bean = feignProxy.getCurrencyExchangeValue(from, to);
 
 		return new CurrenyConversionBean(bean.getId(), from, to, quantity, bean.getMultiple(),
-				quantity.multiply(bean.getMultiple()));
+				quantity.multiply(bean.getMultiple()), bean.getPort());
 	}
 
 }
